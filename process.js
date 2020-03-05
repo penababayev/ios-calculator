@@ -38,11 +38,63 @@ for(let i=0; i<calcNumBtns.length; i++)
 calcNumBtns[i].addEventListener('click',updateDisplayVal,false);
 }
 
-/*for(let i=0; i<calcOperatorBtns.length; i++)
+var performOperation=(clickObj)=> {
+    var operator=clickObj.target.innerText;
+
+switch (operator) {
+    case "+":
+        pendingVal=displayVal;
+        displayVal="0";
+        displayValElementBtn.innerText=displayVal;
+        evalStringArray.push(pendingVal);
+        evalStringArray.push('+');
+        break;
+
+    case "-":
+        pendingVal=displayVal;
+        displayVal="0";
+        displayValElementBtn.innerText=displayVal;
+        evalStringArray.push(pendingVal);
+        evalStringArray.push('-');
+        break;
+
+    case "x":
+        pendingVal=displayVal;
+        displayVal="0";
+        displayValElementBtn.innerText=displayVal;
+        evalStringArray.push(pendingVal);
+        evalStringArray.push('*');
+        break;
+
+    case "÷":
+        pendingVal=displayVal;
+        displayVal="0";
+        displayValElementBtn.innerText=displayVal;
+        evalStringArray.push(pendingVal);
+        evalStringArray.push('/');
+        break;
+
+    case "=":
+        evalStringArray.push(displayVal);
+        var evaluation=eval(evalStringArray.join(' '));
+        displayVal=evaluation+'';
+        displayValElementBtn.innerText=displayVal;
+        evalStringArray=[];
+        break;
+
+    default:
+        break;
+            
+}
+
+
+}
+
+
+for(let i=0; i<calcOperatorBtns.length; i++)
 {
 calcOperatorBtns[i].addEventListener('click',performOperation,false);
 }
-*/
 
 clearBtn.onclick=()=>{
     displayVal='0';
@@ -60,4 +112,10 @@ backspaceBtn.onclick=()=> {
         displayVal='0';
         displayValElementBtn.innerHTML=displayVal;
     
+}
+
+decimalBtn.onclick=()=> {
+    if(!displayVal.includes('.'))
+    displayVal+=".";
+    displayValElementBtn.innerText=displayVal;
 }
