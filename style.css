@@ -30,3 +30,43 @@ body{
 .column {
     display: table-cell;
 }
+
+.calc-parent {
+    margin-left: calc(50% - 100px);
+}
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#calc-zero {
+    width: 52.666px;
+    border-radius: 0 0 0 7px;
+}
+
+#calc-clear {
+    width: 52.666px;
+}
+
+#calc-display-val {
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
+    border-right: 1px solid grey;
+    color: white;
+    font-size: 46px;
+    padding: 12px;
+    background-color: #383838;
+    overflow: hidden;
+    white-space: nowrap;
+    border-radius: 7px 7px 0 0;
+    text-align: right;
+}
+
+#calc-equals {
+    border-radius: 0 0 7px 0;
+}
+
+.calc-btn-operator {
+    background-color: orange;
+    color: white;
+}
